@@ -13,7 +13,7 @@ export default function ListItem() {
 
   const addToCart = (item) => {
     setAddedProduct((curr) => {
-      const isAlreadyAdded = curr.some((p) => p.name === item.name);
+      const isAlreadyAdded = curr.find((p) => p.name === item.name);
       if (isAlreadyAdded) {
         return curr.map((p) => (p.name === item.name ? { ...p, quantity: p.quantity + 1 } : p));
       }
